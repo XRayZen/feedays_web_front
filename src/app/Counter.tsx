@@ -9,10 +9,7 @@ const Counter = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <div>Count: {count}</div>
-      <button
-        onClick={increment}
-        className="px-2 py-1 rounded-lg bg-blue-600 text-white"
-      >
+      <button onClick={increment} className='px-2 py-1 rounded-lg bg-blue-600 text-white'>
         Increment
       </button>
       {children}

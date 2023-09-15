@@ -1,7 +1,7 @@
 type User = {
-  id: string,
-  name: string,
-  email: string,
+  id: string;
+  name: string;
+  email: string;
 };
 
 const UserList = async () => {

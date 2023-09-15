@@ -1,4 +1,3 @@
-
 // ただThanksページを表示するだけのコンポーネント
 export default function Thanks() {
   return (
@@ -6,5 +5,5 @@ export default function Thanks() {
       <h1>Thanks!</h1>
       <p>Thanks for contacting us!</p>
     </div>
-  )
+  );
 }

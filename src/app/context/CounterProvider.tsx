@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React from 'react';
 
 // ReactのContext APIを使用して、カウンターアプリケーションの状態を管理するためのContextを作成
@@ -9,11 +9,7 @@ const CounterContext = React.createContext<
 // Contextを使用するためのProviderを作成
 export function CounterProvider({ children }: { children: React.ReactNode }) {
   const [count, setCount] = React.useState(0);
-  return (
-    <CounterContext.Provider value={[count, setCount]}>
-      {children}
-    </CounterContext.Provider>
-  );
+  return <CounterContext.Provider value={[count, setCount]}>{children}</CounterContext.Provider>;
 }
 
 // カウンターコンポーネントを作成
@@ -24,5 +20,3 @@ export function useCounter() {
   }
   return context;
 }
-
-

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import React, { useState } from 'react';
 
@@ -14,5 +14,3 @@ function Count() {
 }
 
 export default Count;
-
-

@@ -1,13 +1,13 @@
-"use client";
-import { UserContext, UserInfo } from './context'
+'use client';
+import { UserContext, UserInfo } from './context';
 
 type Props = {
-  userInfo: UserInfo
-  children: React.ReactNode
-}
+  userInfo: UserInfo;
+  children: React.ReactNode;
+};
 
 const UserProvider = ({ userInfo, children }: Props) => {
-  return <UserContext.Provider value={userInfo}>{children}</UserContext.Provider>
-}
+  return <UserContext.Provider value={userInfo}>{children}</UserContext.Provider>;
+};
 
-export default UserProvider
+export default UserProvider;
