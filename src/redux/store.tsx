@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
 import counterReducer from './features/counterSlice';
 import { userApi } from './services/userApi';
-import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 export const store = configureStore({
   reducer: {

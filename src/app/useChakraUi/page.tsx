@@ -19,6 +19,10 @@ export default function Page() {
           Log in
         </Button>
         <Button onClick={toggleColorMode}>Toggle Color Mode</Button>
+        {/* Homeボタンをクリックするとホームに遷移する */}
+        <Button as={Link} href='/' mt={6} colorScheme='teal' color={textColor}>
+          Home
+        </Button>
       </Flex>
     </Flex>
   );

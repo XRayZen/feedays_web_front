@@ -1,7 +1,8 @@
 'use client';
-import { useGetUsersQuery } from '@/redux/services/userApi';
+import Image from 'next/image';
 import { decrement, increment, reset } from '@/redux/features/counterSlice';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { useGetUsersQuery } from '@/redux/services/userApi';
 
 export default function Home() {
   const count = useAppSelector((state) => state.counterReducer.value);
@@ -31,7 +32,7 @@ export default function Home() {
         >
           {data.map((user) => (
             <div key={user.id} style={{ border: '1px solid #ccc', textAlign: 'center' }}>
-              <img
+              <Image
                 src={`https://robohash.org/${user.id}?set=set2&size=180x180`}
                 alt={user.name}
                 style={{ height: 180, width: 180 }}
