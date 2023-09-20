@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
+import selectPageReducer from './features/SelectPage';
 import counterReducer from './features/counterSlice';
 import { userApi } from './services/userApi';
 
 export const store = configureStore({
   reducer: {
     counterReducer,
+    selectPageReducer,
     [userApi.reducerPath]: userApi.reducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
