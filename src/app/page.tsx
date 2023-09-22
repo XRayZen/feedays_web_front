@@ -66,7 +66,7 @@ export default function Home() {
 function Content() {
   // クリックされたサイドバーの名前を受け取って表示を変える
   const linkName = useAppSelector((state) => state.selectPageReducer.value);
-  console.log("Now Select :"+linkName);
+  console.log('Content State :' + linkName);
   switch (linkName) {
     case 'Home':
       return <Text>Home</Text>;

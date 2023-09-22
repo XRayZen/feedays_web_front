@@ -38,7 +38,6 @@ interface SidebarProps extends BoxProps {
 }
 
 export function SidebarContent({ onClose, ...rest }: SidebarProps) {
-  const dispatch = useAppDispatch();
   return (
     <Box
       bg={useColorModeValue('white', 'gray.900')}

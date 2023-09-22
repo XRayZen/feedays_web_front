@@ -24,22 +24,27 @@ export function NavItemComponentByPage({ link, ...rest }: NavItemComponentByPage
       key={link.name}
       icon={link.icon}
       onClick={() => {
-        // ステートにリンクの名前を渡す
-        console.log(link.name);
+        // バグでステートが変更できていな事象にあったが、switchケースで処理が抜け出せていなかったから
+        // 出す為にreturnをつけないといけない
         switch (link.name) {
           case 'Home':
-            console.log('on Click Home');
             dispatch(selectHome());
+            return;
           case 'Trending':
             dispatch(selectTrending());
-          case 'Explore':
+            return;
+            case 'Explore':
             dispatch(selectExplore());
+            return;
           case 'Favorite':
             dispatch(selectFavorite());
-          case 'Settings':
+            return;
+            case 'Settings':
             dispatch(selectSettings());
+            return;
           default:
             dispatch(selectHome());
+            return;
         }
       }}
     >

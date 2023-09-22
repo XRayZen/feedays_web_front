@@ -14,6 +14,7 @@ export const selectPage = createSlice({
   initialState,
   reducers: {
     reset: () => initialState,
+    // BUG: ステートが変更できていない
     selectHome: (state) => {
       state.value = "Home";
     },
@@ -30,26 +31,26 @@ export const selectPage = createSlice({
     selectSettings: (state) => {
       state.value = "Settings";
     },
-    selectHomeByAmount: (state, action: PayloadAction<string>) => {
-      state.value = action.payload;
-    },
-    selectTrendingByAmount: (state, action: PayloadAction<string>) => {
-      console.log("selectTrendingByAmount");
-      state.value = action.payload;
-    },
-    selectExploreByAmount: (state, action: PayloadAction<string>) => {
-      state.value = action.payload;
-    },
-    selectFavoriteByAmount: (state, action: PayloadAction<string>) => {
-      state.value = action.payload;
-    },
-    selectSettingsByAmount: (state, action: PayloadAction<string>) => {
-      state.value = action.payload;
-    },
+    // selectHomeByAmount: (state, action: PayloadAction<string>) => {
+    //   state.value = action.payload;
+    // },
+    // selectTrendingByAmount: (state, action: PayloadAction<string>) => {
+    //   console.log("selectTrendingByAmount");
+    //   state.value = action.payload;
+    // },
+    // selectExploreByAmount: (state, action: PayloadAction<string>) => {
+    //   state.value = action.payload;
+    // },
+    // selectFavoriteByAmount: (state, action: PayloadAction<string>) => {
+    //   state.value = action.payload;
+    // },
+    // selectSettingsByAmount: (state, action: PayloadAction<string>) => {
+    //   state.value = action.payload;
+    // },
   },
 });
 
-export const { selectHome, selectTrending, selectExplore, selectFavorite, selectSettings, selectHomeByAmount, selectTrendingByAmount, selectExploreByAmount, selectFavoriteByAmount, selectSettingsByAmount, reset } = selectPage.actions;
+export const { selectHome, selectTrending, selectExplore, selectFavorite, selectSettings, reset } = selectPage.actions;
 export default selectPage.reducer;
 
 
