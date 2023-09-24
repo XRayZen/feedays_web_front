@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/dist/query';
-import selectPageReducer from './features/SelectPage';
 import counterReducer from './features/counterSlice';
+import selectPageReducer from './features/selectPage';
 import { userApi } from './services/userApi';
 
 export const store = configureStore({

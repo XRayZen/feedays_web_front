@@ -53,20 +53,18 @@ export default function Home() {
       </Drawer>
       <MobileNav display={{ base: 'flex', md: 'none' }} onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p='4'>
-        {/* Content */}
         {/* <Text fontSize='2xl' fontFamily='monospace' fontWeight='bold'>
           サイドバーのクリックでここの表示を変える
         </Text> */}
-        <Content />
+        <SelectPageView />
       </Box>
     </Box>
   );
 }
 
-function Content() {
+function SelectPageView() {
   // クリックされたサイドバーの名前を受け取って表示を変える
   const linkName = useAppSelector((state) => state.selectPageReducer.value);
-  console.log('Content State :' + linkName);
   switch (linkName) {
     case 'Home':
       return <Text>Home</Text>;

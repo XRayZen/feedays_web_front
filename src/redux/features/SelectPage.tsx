@@ -1,5 +1,4 @@
 import { createSlice, } from '@reduxjs/toolkit';
-import type {PayloadAction} from "@reduxjs/toolkit"
 
 type SelectPageState = {
   value: string;
@@ -31,22 +30,6 @@ export const selectPage = createSlice({
     selectSettings: (state) => {
       state.value = "Settings";
     },
-    // selectHomeByAmount: (state, action: PayloadAction<string>) => {
-    //   state.value = action.payload;
-    // },
-    // selectTrendingByAmount: (state, action: PayloadAction<string>) => {
-    //   console.log("selectTrendingByAmount");
-    //   state.value = action.payload;
-    // },
-    // selectExploreByAmount: (state, action: PayloadAction<string>) => {
-    //   state.value = action.payload;
-    // },
-    // selectFavoriteByAmount: (state, action: PayloadAction<string>) => {
-    //   state.value = action.payload;
-    // },
-    // selectSettingsByAmount: (state, action: PayloadAction<string>) => {
-    //   state.value = action.payload;
-    // },
   },
 });
 

@@ -25,7 +25,7 @@ import {
   selectHome,
   selectSettings,
   selectTrending,
-} from '@/redux/features/SelectPage';
+} from '@/redux/features/selectPage';
 import { useAppDispatch } from '@/redux/hooks';
 
 export interface LinkItemProps {
@@ -55,12 +55,11 @@ export function SidebarContent({ onClose, ...rest }: SidebarProps) {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {SideBarItems.map((link) => (
-        <NavItemComponentByPage link={link} key={'ff'} />
+        <NavItemComponentByPage link={link} onClose={onClose} key={'ff'} />
       ))}
       {/* 細い区切り線 */}
       <Divider my='2' />
       {/* サイトのフィードリスト（アコーディオンメニュー） */}
-
     </Box>
   );
 }

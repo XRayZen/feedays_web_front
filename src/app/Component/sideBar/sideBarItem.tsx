@@ -1,4 +1,4 @@
-import { BoxProps } from '@chakra-ui/react';
+import { BoxProps, useDisclosure } from '@chakra-ui/react';
 import link from 'next/link';
 import React, { ReactNode, ReactText } from 'react';
 import { NavItem } from './navItem';
@@ -9,15 +9,15 @@ import {
   selectExplore,
   selectFavorite,
   selectSettings,
-} from '@/redux/features/SelectPage';
+} from '@/redux/features/selectPage';
 import { useAppDispatch } from '@/redux/hooks';
 
 interface NavItemComponentByPageProps extends BoxProps {
-  // onClose: () => void;
+  onClose: () => void;
   link: LinkItemProps;
 }
 
-export function NavItemComponentByPage({ link, ...rest }: NavItemComponentByPageProps) {
+export function NavItemComponentByPage({ link, onClose, ...rest }: NavItemComponentByPageProps) {
   const dispatch = useAppDispatch();
   return (
     <NavItem
@@ -29,18 +29,23 @@ export function NavItemComponentByPage({ link, ...rest }: NavItemComponentByPage
         switch (link.name) {
           case 'Home':
             dispatch(selectHome());
+            onClose();
             return;
           case 'Trending':
             dispatch(selectTrending());
+            onClose();
             return;
-            case 'Explore':
+          case 'Explore':
             dispatch(selectExplore());
+            onClose();
             return;
           case 'Favorite':
             dispatch(selectFavorite());
+            onClose();
             return;
-            case 'Settings':
+          case 'Settings':
             dispatch(selectSettings());
+            onClose();
             return;
           default:
             dispatch(selectHome());
