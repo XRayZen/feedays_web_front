@@ -3,7 +3,7 @@ interface IApiRepo {
   // get: (url: string) => Promise<any>
   genUserID: () => Promise<string>;
   RegisterUser(userID: string,userConfig: UserConfig): Promise<void>;
-
+  ConfigSync(userID: string): Promise<UserConfig>;
 }
 
 // case "ConfigSync":
