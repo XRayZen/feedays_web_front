@@ -4,6 +4,7 @@ interface IApiRepo {
   genUserID: () => Promise<string>;
   RegisterUser(userID: string,userConfig: UserConfig): Promise<void>;
   ConfigSync(userID: string): Promise<UserConfig>;
+  ReportReadActivity(userID: string,readHistory: ReadHistory): Promise<void>;
 }
 
 // case "ConfigSync":
