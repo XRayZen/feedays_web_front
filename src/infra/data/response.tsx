@@ -1,20 +1,4 @@
 
-
-
-// type SearchResult struct {
-// 	// refuse, accept
-// 	ApiResponse     string `json:"apiResponse"`
-// 	ResponseMessage string `json:"responseMessage"`
-// 	// found, none, new site, error
-// 	ResultType string `json:"resultType"`
-// 	Exception  string `json:"exception"`
-// 	//AddContentならサイトを返す
-// 	//PowerSearchなら記事を返す
-// 	SearchType string    `json:"searchType"`
-// 	Websites   []WebSite `json:"websites"`
-// 	Articles   []Article `json:"articles"`
-// }
-
 class SearchResult {
     apiResponse: string;
     responseMessage: string;
@@ -35,23 +19,39 @@ class SearchResult {
     }
 }
 
+class APIResponse {
+    responseType: string;
+    value: string;
+    error: string;
 
-// type APIResponse struct {
-// 	ResponseType string `json:"responseType"`
-// 	Value        string `json:"value"`
-// 	Error        string `json:"error"`
-// }
+    constructor() {
+        this.responseType = "";
+        this.value = "";
+        this.error = "";
+    }
+}
 
-// type FetchArticleResponse struct {
-// 	ResponseType string    `json:"responseType"`
-// 	Articles     []Article `json:"articles"`
-// 	Error        string    `json:"error"`
-// }
+class FetchArticleResponse {
+    responseType: string;
+    articles: Article[];
+    error: string;
 
-// type ConfigSyncResponse struct {
-// 	ResponseType string     `json:"responseType"`
-// 	UserConfig   UserConfig `json:"userConfig"`
-// 	Error        string     `json:"error"`
-// }
+    constructor() {
+        this.responseType = "";
+        this.articles = [];
+        this.error = "";
+    }
+}
 
+class ConfigSyncResponse {
+    responseType: string;
+    userConfig: UserConfig;
+    error: string;
+
+    constructor() {
+        this.responseType = "";
+        this.userConfig = new UserConfig();
+        this.error = "";
+    }
+}
 
