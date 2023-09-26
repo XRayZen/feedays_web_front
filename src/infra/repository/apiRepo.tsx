@@ -1,6 +1,6 @@
 interface IUserApiRepo {
   isMOck: boolean;
-  // get: (url: string) => Promise<any>
+
   genUserID: () => Promise<string>;
   RegisterUser(userID: string,userConfig: UserConfig): Promise<string>;
   ConfigSync(userID: string): Promise<ConfigSyncResponse>;
@@ -18,20 +18,15 @@ interface IUserApiRepo {
 }
 
 interface IRssApiRepo {
-  
-	// case "Search":
-	// 	return functions.Search(access_ip, user_id, request_argument_json1)
-	// case "SubscribeSite":
-	// 	return functions.SubscribeSite(access_ip, user_id, request_argument_json1, request_argument_json2)
-	// case "FetchArticle":
-	// 	return functions.FetchArticle(access_ip, user_id, request_argument_json1)
-	// case "ModifyExploreCategory":
-	// 	return functions.ModifyExploreCategory(request_argument_json1, request_argument_json2)
-	// case "ChangeSiteCategory":
-	// 	return functions.ChangeSiteCategory(access_ip, user_id, request_argument_json1, request_argument_json2)
-	// case "DeleteSite":
-	// 	return functions.DeleteSite(access_ip, request_argument_json1, request_argument_json2)
+  Search(userID: string,searchRequest:ApiSearchRequest): Promise<SearchResult>;
+  SubscribeSite(userID: string,site:WebSite,isSubscribe: boolean): Promise<string>;
+  FetchArticle(userID: string,fetchArticleRequest:FetchArticlesRequest): Promise<FetchArticleResponse>;
 
+  ExploreCategory(userID: string): Promise<ExploreCategory[]>;
+  ModifyExploreCategory(userID: string,exploreCategory:ExploreCategory,ModifyType: string): Promise<string>;
+  ChangeSiteCategory(userID: string,siteUrl:string,categoryName:string): Promise<string>;
+
+  DeleteSite(userID: string,siteUrl:string,isUnscoped:boolean): Promise<string>;
 }
 
 
