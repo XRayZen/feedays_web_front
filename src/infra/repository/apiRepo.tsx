@@ -1,24 +1,49 @@
-interface IApiRepo {
+interface IUserApiRepo {
   isMOck: boolean;
-  // get: (url: string) => Promise<any>
+
   genUserID: () => Promise<string>;
-  RegisterUser(userID: string,userConfig: UserConfig): Promise<void>;
-  ConfigSync(userID: string): Promise<UserConfig>;
-  ReportReadActivity(userID: string,readHistory: ReadHistory): Promise<void>;
+  RegisterUser(userID: string, userConfig: UserConfig): Promise<string>;
+  ConfigSync(userID: string): Promise<ConfigSyncResponse>;
+  ReportReadActivity(userID: string, readHistory: ReadHistory): Promise<string>;
+  UpdateUiConfig(userID: string, clientConfig: ClientConfig): Promise<string>;
+
+  ModifySearchHistory(
+    userID: string,
+    searchHistory: SearchHistory[],
+    searchHistoryType: string,
+  ): Promise<string>;
+  ModifyFavoriteSite(
+    userID: string,
+    favoriteSite: FavoriteSite[],
+    favoriteSiteType: string,
+  ): Promise<string>;
+  ModifyFavoriteArticle(
+    userID: string,
+    favoriteArticle: FavoriteArticle[],
+    favoriteArticleType: string,
+  ): Promise<string>;
+
+  GetAPIRequestLimit(userID: string): Promise<ApiConfig>;
+  ModifyAPIRequestLimit(userID: string, apiConfig: ApiConfig): Promise<string>;
+
+  DeleteUserData(userID: string): Promise<string>;
 }
 
-// case "ConfigSync":
-//   return functions.ConfigSync(user_id)
-// case "ReportReadActivity":
-//   return functions.ReportReadActivity(user_id, argument_json_1)
-// case "UpdateUiConfig":
-//   return functions.UpdateUiConfig(user_id, argument_json_1)
-// case "ModifySearchHistory":
-//   return functions.ModifySearchHistory(user_id, argument_json_1, argument_json_2)
-// case "ModifyFavoriteSite":
-//   return functions.ModifyFavoriteSite(user_id, argument_json_1, argument_json_2)
-// case "ModifyFavoriteArticle":
-//   return functions.ModifyFavoriteArticle(user_id, argument_json_1, argument_json_2)
-// case "GetAPIRequestLimit":
-//   return functions.GetAPIRequestLimit(user_id)
-// case "ModifyAPIRequestLimit":
+interface IRssApiRepo {
+  Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult>;
+  SubscribeSite(userID: string, site: WebSite, isSubscribe: boolean): Promise<string>;
+  FetchArticle(
+    userID: string,
+    fetchArticleRequest: FetchArticlesRequest,
+  ): Promise<FetchArticleResponse>;
+
+  ExploreCategory(userID: string): Promise<ExploreCategory[]>;
+  ModifyExploreCategory(
+    userID: string,
+    exploreCategory: ExploreCategory,
+    ModifyType: string,
+  ): Promise<string>;
+  ChangeSiteCategory(userID: string, siteUrl: string, categoryName: string): Promise<string>;
+
+  DeleteSite(userID: string, siteUrl: string, isUnscoped: boolean): Promise<string>;
+}
