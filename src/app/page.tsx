@@ -15,6 +15,7 @@ import {
   FlexProps,
   As,
 } from '@chakra-ui/react';
+
 import React, { ReactNode, ReactText } from 'react';
 import { FiCompass, FiHome, FiSettings, FiStar, FiTrendingUp } from 'react-icons/fi';
 import { MobileNav } from './Component/sideBar/mobileNav';
