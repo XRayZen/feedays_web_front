@@ -54,9 +54,9 @@ class FavoriteArticle {
   articleID: number;
   createdAt: string;
 
-  constructor() {
-    this.articleID = 0;
-    this.createdAt = '';
+  constructor(articleID: number, createdAt: string) {
+    this.articleID = articleID;
+    this.createdAt = createdAt;
   }
 }
 
@@ -64,9 +64,9 @@ class SearchHistory {
   searchWord: string;
   searchAt: string;
 
-  constructor() {
-    this.searchWord = '';
-    this.searchAt = '';
+  constructor(searchWord: string, searchAt: string) {
+    this.searchWord = searchWord;
+    this.searchAt = searchAt;
   }
 }
 

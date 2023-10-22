@@ -10,21 +10,21 @@ export interface IUserApiRepo {
   ModifySearchHistory(
     userID: string,
     searchHistory: SearchHistory[],
-    searchHistoryType: string,
-  ): Promise<string>;
+    searchHistoryType: string
+  ): Promise<string[]>;
+
   ModifyFavoriteSite(
     userID: string,
     favoriteSite: FavoriteSite[],
-    favoriteSiteType: string,
+    favoriteSiteType: string
   ): Promise<string>;
   ModifyFavoriteArticle(
     userID: string,
     favoriteArticle: FavoriteArticle[],
-    favoriteArticleType: string,
+    favoriteArticleType: string
   ): Promise<string>;
 
-  GetAPIRequestLimit(userID: string): Promise<ApiConfig>;
-  ModifyAPIRequestLimit(userID: string, apiConfig: ApiConfig): Promise<string>;
+  GetAPIRequestLimit(userID: string): Promise<ApiLimitConfig>;
 
   DeleteUserData(userID: string): Promise<string>;
 }
@@ -34,14 +34,14 @@ export interface IRssApiRepo {
   SubscribeSite(userID: string, site: WebSite, isSubscribe: boolean): Promise<string>;
   FetchArticle(
     userID: string,
-    fetchArticleRequest: FetchArticlesRequest,
+    fetchArticleRequest: FetchArticlesRequest
   ): Promise<FetchArticleResponse>;
 
   ExploreCategory(userID: string): Promise<ExploreCategory[]>;
   ModifyExploreCategory(
     userID: string,
     exploreCategory: ExploreCategory,
-    ModifyType: string,
+    ModifyType: string
   ): Promise<string>;
   ChangeSiteCategory(userID: string, siteUrl: string, categoryName: string): Promise<string>;
 

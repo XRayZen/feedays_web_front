@@ -1,6 +1,6 @@
 module.exports = {
   // 意味: 1行の最大文字数
-  printWidth: 100,
+  printWidth: 130,
   // 意味: インデントのスペース数
   tabWidth: 2,
   // 意味: タブを使用するか

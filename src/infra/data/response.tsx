@@ -1,57 +1,63 @@
-
 class SearchResult {
-    apiResponse: string;
-    responseMessage: string;
-    resultType: string;
-    exception: string;
-    searchType: string;
-    websites: WebSite[];
-    articles: Article[];
+  apiResponse: string;
+  responseMessage: string;
+  resultType: string;
+  exception: string;
+  searchType: string;
+  websites: WebSite[];
+  articles: Article[];
 
-    constructor() {
-        this.apiResponse = "";
-        this.responseMessage = "";
-        this.resultType = "";
-        this.exception = "";
-        this.searchType = "";
-        this.websites = [];
-        this.articles = [];
-    }
+  constructor(
+    apiResponse: string,
+    responseMessage: string,
+    resultType: string,
+    exception: string,
+    searchType: string,
+    websites: WebSite[],
+    articles: Article[]
+  ) {
+    this.apiResponse = apiResponse;
+    this.responseMessage = responseMessage;
+    this.resultType = resultType;
+    this.exception = exception;
+    this.searchType = searchType;
+    this.websites = websites;
+    this.articles = articles;
+  }
 }
 
 class APIResponse {
-    responseType: string;
-    value: string;
-    error: string;
+  responseType: string;
+  value: string;
+  error: string;
 
-    constructor() {
-        this.responseType = "";
-        this.value = "";
-        this.error = "";
-    }
+  constructor(responseType: string, value: string, error: string) {
+    this.responseType = responseType;
+    this.value = value;
+    this.error = error;
+  }
 }
 
 class FetchArticleResponse {
-    responseType: string;
-    articles: Article[];
-    error: string;
+  responseType: string;
+  articles: Article[];
+  error: string;
 
-    constructor() {
-        this.responseType = "";
-        this.articles = [];
-        this.error = "";
-    }
+  constructor(responseType: string, articles: Article[], error: string) {
+    this.responseType = responseType;
+    this.articles = articles;
+    this.error = error;
+  }
 }
 
 class ConfigSyncResponse {
-    responseType: string;
-    userConfig: UserConfig;
-    error: string;
+  responseType: string;
+  userConfig: UserConfig;
+  error: string;
 
-    constructor() {
-        this.responseType = "";
-        this.userConfig = new UserConfig();
-        this.error = "";
-    }
+  constructor(responseType: string, userConfig: UserConfig, error: string) {
+    this.responseType = responseType;
+    this.userConfig = userConfig;
+    this.error = error;
+  }
 }
-
