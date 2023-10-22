@@ -1,4 +1,4 @@
-interface IUserApiRepo {
+export interface IUserApiRepo {
   isMOck: boolean;
 
   genUserID: () => Promise<string>;
@@ -29,7 +29,7 @@ interface IUserApiRepo {
   DeleteUserData(userID: string): Promise<string>;
 }
 
-interface IRssApiRepo {
+export interface IRssApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult>;
   SubscribeSite(userID: string, site: WebSite, isSubscribe: boolean): Promise<string>;
   FetchArticle(
