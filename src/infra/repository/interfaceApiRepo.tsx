@@ -29,7 +29,7 @@ export interface IUserApiRepo {
   DeleteUserData(userID: string): Promise<string>;
 }
 
-export interface IRssApiRepo {
+export interface ISiteApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult>;
   SubscribeSite(userID: string, site: WebSite, isSubscribe: boolean): Promise<string>;
   FetchArticle(

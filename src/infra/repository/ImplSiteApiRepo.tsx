@@ -1,6 +1,6 @@
-import { IRssApiRepo } from "./interfaceApiRepo";
+import { ISiteApiRepo } from './interfaceApiRepo';
 
-export class MockRssApiRepo implements IRssApiRepo {
+export class ImplSiteApiRepo implements ISiteApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult> {
     throw new Error('Method not implemented.');
   }
@@ -30,4 +30,3 @@ export class MockRssApiRepo implements IRssApiRepo {
     throw new Error('Method not implemented.');
   }
 }
-

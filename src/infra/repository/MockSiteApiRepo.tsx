@@ -1,9 +1,10 @@
-import { IRssApiRepo } from "./interfaceApiRepo";
+import { ISiteApiRepo as ISiteApiRepo } from './interfaceApiRepo';
 
-
-export class ImplRssApiRepo implements IRssApiRepo {
+export class MockSiteApiRepo implements ISiteApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult> {
-    throw new Error('Method not implemented.');
+    return new Promise((resolve, reject) => {
+      new SearchResult()
+    } );
   }
   SubscribeSite(userID: string, site: WebSite, isSubscribe: boolean): Promise<string> {
     throw new Error('Method not implemented.');
