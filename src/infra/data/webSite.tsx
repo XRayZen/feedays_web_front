@@ -19,16 +19,26 @@ class WebSite {
   // サイトの最終更新日時
   lastModified: string;
 
-  constructor() {
-    this.siteName = '';
-    this.siteImage = '';
-    this.siteDescription = '';
-    this.siteID = '';
-    this.siteURL = '';
-    this.siteCategory = '';
-    this.siteRssURL = '';
-    this.siteTags = [];
-    this.lastModified = '';
+  constructor(
+    siteName: string,
+    siteImage: string,
+    siteDescription: string,
+    siteID: string,
+    siteURL: string,
+    siteCategory: string,
+    siteRssURL: string,
+    siteTags: string[],
+    lastModified: string
+  ) {
+    this.siteName = siteName;
+    this.siteImage = siteImage;
+    this.siteDescription = siteDescription;
+    this.siteID = siteID;
+    this.siteURL = siteURL;
+    this.siteCategory = siteCategory;
+    this.siteRssURL = siteRssURL;
+    this.siteTags = siteTags;
+    this.lastModified = lastModified;
   }
 }
 
@@ -46,16 +56,16 @@ class Article {
   category: string;
   siteUrl: string;
 
-  constructor() {
-    this.title = '';
-    this.description = '';
-    this.link = '';
-    this.image = new RssFeedImage();
-    this.site = '';
-    this.publishedAt = '';
-    this.isReedLate = false;
-    this.category = '';
-    this.siteUrl = '';
+  constructor(title: string, description: string, link: string, image: RssFeedImage, site: string, publishedAt: string, isReedLate: boolean, category: string, siteUrl: string) {
+    this.title = title;
+    this.description = description;
+    this.link = link;
+    this.image = image;
+    this.site = site;
+    this.publishedAt = publishedAt;
+    this.isReedLate = isReedLate;
+    this.category = category;
+    this.siteUrl = siteUrl;
   }
 }
 
@@ -65,8 +75,8 @@ class RssFeedImage {
   // 画像のデータ
   image: string;
 
-  constructor() {
-    this.link = '';
-    this.image = '';
+  constructor(link: string, image: string) {
+    this.link = link;
+    this.image = image;
   }
 }
