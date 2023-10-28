@@ -1,5 +1,9 @@
 // モックテスト用のデータを生成して返す
 
+import { ExploreCategory } from "../data/explore";
+import { UserConfig } from "../data/userConfig";
+import { Article, RssFeedImage } from "../data/webSite";
+
 // 記事のモックデータを生成して返す
 function genMockArticles(): Article[] {
   let articles: Article[] = [];
@@ -39,4 +43,9 @@ function genMockExploreCategories(): ExploreCategory[] {
     );
   }
   return exploreCategories;
+}
+
+// ユーザー設定を生成する
+export function genMockUserConfig(userID: string): UserConfig {
+  return new UserConfig("Mock User Name",userID,"Free","JPN",[],[],[],[],[])
 }

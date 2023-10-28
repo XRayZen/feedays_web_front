@@ -1,6 +1,6 @@
-import { ISiteApiRepo } from './interfaceApiRepo';
+import { IRssApiRepo } from './interfaceApiRepo';
 
-export class ImplSiteApiRepo implements ISiteApiRepo {
+export class ImplSiteApiRepo implements IRssApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult> {
     throw new Error('Method not implemented.');
   }

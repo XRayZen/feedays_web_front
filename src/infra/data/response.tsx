@@ -1,4 +1,7 @@
-class SearchResult {
+import { UserConfig } from "./userConfig";
+import { WebSite, Article } from "./webSite";
+
+export class SearchResult {
   apiResponse: string;
   responseMessage: string;
   resultType: string;
@@ -26,7 +29,7 @@ class SearchResult {
   }
 }
 
-class APIResponse {
+export class APIResponse {
   responseType: string;
   value: string;
   error: string;
@@ -38,7 +41,7 @@ class APIResponse {
   }
 }
 
-class FetchArticleResponse {
+export class FetchArticleResponse {
   responseType: string;
   articles: Article[];
   error: string;
@@ -50,7 +53,7 @@ class FetchArticleResponse {
   }
 }
 
-class ConfigSyncResponse {
+export class ConfigSyncResponse {
   responseType: string;
   userConfig: UserConfig;
   error: string;

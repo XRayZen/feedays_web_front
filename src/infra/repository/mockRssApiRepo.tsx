@@ -1,6 +1,6 @@
-import { ISiteApiRepo as ISiteApiRepo } from './interfaceApiRepo';
+import { IRssApiRepo } from './interfaceApiRepo';
 
-export class MockSiteApiRepo implements ISiteApiRepo {
+export class MockSiteApiRepo implements IRssApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult> {
     return new Promise((resolve, reject) => {
       resolve(

@@ -1,4 +1,4 @@
-class ExploreCategory {
+export class ExploreCategory {
   categoryName: string;
   categoryImage: string;
   categoryDescription: string;

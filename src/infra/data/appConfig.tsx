@@ -1,40 +1,46 @@
-class ClientConfig {
+export class ClientConfig {
   uiConfig: UiConfig;
 
-  constructor() {
-    this.uiConfig = new UiConfig();
+  constructor(uiConfig: UiConfig) {
+    this.uiConfig = uiConfig;
   }
 }
 
-class UiConfig {
+export class UiConfig {
   themeColorValue: number;
   themeMode: string;
   drawerMenuOpacity: number;
   articleListFontSize: UiResponsiveFontSize;
   articleDetailFontSize: UiResponsiveFontSize;
 
-  constructor() {
-    this.themeColorValue = 0;
-    this.themeMode = '';
-    this.drawerMenuOpacity = 0;
-    this.articleListFontSize = new UiResponsiveFontSize();
-    this.articleDetailFontSize = new UiResponsiveFontSize();
+  constructor(
+    themeColorValue: number,
+    themeMode: string,
+    drawerMenuOpacity: number,
+    articleListFontSize: UiResponsiveFontSize,
+    articleDetailFontSize: UiResponsiveFontSize
+  ) {
+    this.themeColorValue = themeColorValue;
+    this.themeMode = themeMode;
+    this.drawerMenuOpacity = drawerMenuOpacity;
+    this.articleListFontSize = articleListFontSize;
+    this.articleDetailFontSize = articleDetailFontSize;
   }
 }
 
-class UiResponsiveFontSize {
+export class UiResponsiveFontSize {
   mobile: number;
   tablet: number;
   defaultSize: number;
 
-  constructor() {
-    this.mobile = 0;
-    this.tablet = 0;
-    this.defaultSize = 0;
+  constructor(mobile: number, tablet: number, defaultSize: number) {
+    this.mobile = mobile;
+    this.tablet = tablet;
+    this.defaultSize = defaultSize;
   }
 }
 
-class ApiLimitConfig {
+export class ApiLimitConfig {
   accountType: string;
   refreshArticleInterval: number;
   fetchArticleRequestInterval: number;

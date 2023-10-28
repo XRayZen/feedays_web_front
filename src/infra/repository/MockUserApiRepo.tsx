@@ -1,11 +1,10 @@
+import { ClientConfig, ApiLimitConfig } from '../data/appConfig';
+import { ConfigSyncResponse } from '../data/response';
+import { UserConfig, ReadHistory, SearchHistory, FavoriteSite, FavoriteArticle } from '../data/userConfig';
+import { genMockUserConfig } from './genMockData';
 import { IUserApiRepo } from './interfaceApiRepo';
 
 export class MockUserApiRepo implements IUserApiRepo {
-  isMOck: boolean;
-
-  constructor(isMock: boolean) {
-    this.isMOck = isMock;
-  }
 
   genUserID(): Promise<string> {
     // "Mock User ID"を返す
@@ -22,7 +21,7 @@ export class MockUserApiRepo implements IUserApiRepo {
 
   ConfigSync(userID: string): Promise<ConfigSyncResponse> {
     return new Promise((resolve, reject) => {
-      resolve(new ConfigSyncResponse('accept', new UserConfig(), ''));
+      resolve(new ConfigSyncResponse('accept', genMockUserConfig(userID), ''));
     });
   }
 

@@ -1,11 +1,8 @@
 import { IUserApiRepo } from './interfaceApiRepo';
 
 // IUserApiRepoを継承して実装する
-export class ImplApiRepo implements IUserApiRepo {
-  isMOck: boolean;
-
-  constructor(isMock: boolean) {
-    this.isMOck = isMock;
+export class ImplUserApiRepo implements IUserApiRepo {
+  constructor() {
   }
 
   genUserID(): Promise<string> {

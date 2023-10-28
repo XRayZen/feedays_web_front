@@ -1,5 +1,11 @@
+import { ClientConfig, ApiLimitConfig } from "../data/appConfig";
+import { ExploreCategory } from "../data/explore";
+import { ApiSearchRequest, FetchArticlesRequest } from "../data/request";
+import { ConfigSyncResponse, SearchResult, FetchArticleResponse } from "../data/response";
+import { FavoriteArticle, FavoriteSite, ReadHistory, SearchHistory, UserConfig } from "../data/userConfig";
+import { WebSite } from "../data/webSite";
+
 export interface IUserApiRepo {
-  isMOck: boolean;
 
   genUserID: () => Promise<string>;
   RegisterUser(userID: string, userConfig: UserConfig): Promise<string>;
@@ -29,7 +35,7 @@ export interface IUserApiRepo {
   DeleteUserData(userID: string): Promise<string>;
 }
 
-export interface ISiteApiRepo {
+export interface IRssApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult>;
   SubscribeSite(userID: string, site: WebSite, isSubscribe: boolean): Promise<string>;
   FetchArticle(

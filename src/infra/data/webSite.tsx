@@ -1,5 +1,5 @@
 // WebSiteの構造体
-class WebSite {
+export class WebSite {
   // サイト名
   siteName: string;
   // サイトの画像URL
@@ -42,7 +42,7 @@ class WebSite {
   }
 }
 
-class Article {
+export class Article {
   title: string;
   description: string;
   link: string;
@@ -69,7 +69,7 @@ class Article {
   }
 }
 
-class RssFeedImage {
+export class RssFeedImage {
   // 画像のリンク
   link: string;
   // 画像のデータ
