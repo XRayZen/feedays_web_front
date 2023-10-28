@@ -5,12 +5,12 @@ export class ApiSearchRequest {
   accountType: string;
   requestTime: string;
 
-  constructor() {
-    this.searchType = '';
-    this.word = '';
-    this.userID = '';
-    this.accountType = '';
-    this.requestTime = '';
+  constructor(searchType: string, word: string, userID: string, accountType: string, requestTime: string) {
+    this.searchType = searchType;
+    this.word = word;
+    this.userID = userID;
+    this.accountType = accountType;
+    this.requestTime = requestTime;
   }
 }
 
@@ -29,12 +29,12 @@ export class FetchArticlesRequest {
   // クライアント側の記事最古日時
   oldestModified: string;
 
-  constructor() {
-    this.siteUrl = '';
-    this.requestType = '';
-    this.readCount = 0;
-    this.intervalMinutes = 0;
-    this.lastModified = '';
-    this.oldestModified = '';
+  constructor(siteUrl: string, requestType: string, readCount: number, intervalMinutes: number, lastModified: string, oldestModified: string) {
+    this.siteUrl = siteUrl;
+    this.requestType = requestType;
+    this.readCount = readCount;
+    this.intervalMinutes = intervalMinutes;
+    this.lastModified = lastModified;
+    this.oldestModified = oldestModified;
   }
 }

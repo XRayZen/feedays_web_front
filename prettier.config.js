@@ -17,4 +17,6 @@ module.exports = {
   endOfLine: 'lf',
   // 意味: 空白文字を無視するかどうか
   embeddedLanguageFormatting: 'off',
+  //  意味: 算術演算子の前後にスペースを入れるかどうか
+  arrowParens: 'always',
 };

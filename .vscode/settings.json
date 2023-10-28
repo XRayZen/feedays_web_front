@@ -11,7 +11,14 @@
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
   },
-  "eslint.validate": ["html", "javascriptreact", "typescriptreact"],
+  "eslint.validate": [
+    "html",
+    "javascriptreact",
+    "typescriptreact"
+  ],
   "css.validate": false,
-  "scss.validate": false
+  "scss.validate": false,
+  "cSpell.words": [
+    "webp"
+  ]
 }

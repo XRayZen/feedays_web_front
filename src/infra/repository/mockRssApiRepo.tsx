@@ -1,6 +1,11 @@
+import { ExploreCategory } from '../data/explore';
+import { ApiSearchRequest, FetchArticlesRequest } from '../data/request';
+import { SearchResult, FetchArticleResponse } from '../data/response';
+import { WebSite } from '../data/webSite';
+import { genMockArticles, genMockExploreCategories, genMockWebSite, genMockWebSites } from './genMockData';
 import { IRssApiRepo } from './interfaceApiRepo';
 
-export class MockSiteApiRepo implements IRssApiRepo {
+export class MockRssApiRepo implements IRssApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult> {
     return new Promise((resolve, reject) => {
       resolve(
@@ -10,20 +15,8 @@ export class MockSiteApiRepo implements IRssApiRepo {
           'WebSite',
           '',
           'WebSite',
-          [new WebSite('https://www.g', '', '', '', '', '', '', [''], '')],
-          [
-            new Article(
-              'https://www.google.c',
-              '',
-              '',
-              new RssFeedImage('', ''),
-              '',
-              '',
-              false,
-              '',
-              ''
-            ),
-          ]
+          genMockWebSites(),
+          genMockArticles()
         )
       );
     });
@@ -33,10 +26,7 @@ export class MockSiteApiRepo implements IRssApiRepo {
       resolve('Success Subscribe Site');
     });
   }
-  FetchArticle(
-    userID: string,
-    fetchArticleRequest: FetchArticlesRequest
-  ): Promise<FetchArticleResponse> {
+  FetchArticle(userID: string, fetchArticleRequest: FetchArticlesRequest): Promise<FetchArticleResponse> {
     return new Promise((resolve, reject) => {
       resolve(new FetchArticleResponse('accept', genMockArticles(), ''));
     });
@@ -46,11 +36,7 @@ export class MockSiteApiRepo implements IRssApiRepo {
       resolve(genMockExploreCategories());
     });
   }
-  ModifyExploreCategory(
-    userID: string,
-    exploreCategory: ExploreCategory,
-    ModifyType: string
-  ): Promise<string> {
+  ModifyExploreCategory(userID: string, exploreCategory: ExploreCategory, ModifyType: string): Promise<string> {
     return new Promise((resolve, reject) => {
       resolve('Success ModifyExploreCategory');
     });
