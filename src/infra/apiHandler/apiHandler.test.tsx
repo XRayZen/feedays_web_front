@@ -1,11 +1,11 @@
 import '@testing-library/jest-dom';
 import { ApiHandler } from './apiHandler';
-import { MockUserApiRepo } from '../repository/mockUserApiRepo';
 import { genMockUserConfig, genMockWebSite, genMockWebSites } from '../repository/genMockData';
 import { ReadHistory } from '../data/userConfig';
 import { ClientConfig, UiConfig, UiResponsiveFontSize } from '../data/appConfig';
 import { MockRssApiRepo } from '../repository/mockRssApiRepo';
 import { ApiSearchRequest } from '../data/request';
+import { MockUserApiRepo } from '../repository/MockUserApiRepo';
 
 // モックデーターが正しく生成されるかテスト
 describe('MockApi Test', () => {
