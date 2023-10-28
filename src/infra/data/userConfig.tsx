@@ -1,4 +1,6 @@
-class UserConfig {
+import { ClientConfig, UiConfig, UiResponsiveFontSize } from "./appConfig";
+
+export class UserConfig {
   userName: string;
   userUniqueID: string;
   clientConfig: ClientConfig;
@@ -10,21 +12,33 @@ class UserConfig {
   favoriteArticle: FavoriteArticle[];
   readHistory: ReadHistory[];
 
-  constructor() {
-    this.userName = '';
-    this.userUniqueID = '';
-    this.clientConfig = new ClientConfig();
-    this.accountType = '';
-    this.country = '';
-    this.searchHistory = [];
-    this.subscribeWebSite = [];
-    this.favoriteSite = [];
-    this.favoriteArticle = [];
-    this.readHistory = [];
+  constructor(
+    userName: string,
+    userUniqueID: string,
+    accountType: string,
+    country: string,
+    searchHistory: SearchHistory[],
+    subscribeWebSite: SubscribeWebSite[],
+    favoriteSite: FavoriteSite[],
+    favoriteArticle: FavoriteArticle[],
+    readHistory: ReadHistory[]
+  ) {
+    this.userName = userName;
+    this.userUniqueID = userUniqueID;
+    this.clientConfig = new ClientConfig(
+      new UiConfig(0, '', 0, new UiResponsiveFontSize(0, 0, 0), new UiResponsiveFontSize(0, 0, 0))
+    );
+    this.accountType = accountType;
+    this.country = country;
+    this.searchHistory = searchHistory;
+    this.subscribeWebSite = subscribeWebSite;
+    this.favoriteSite = favoriteSite;
+    this.favoriteArticle = favoriteArticle;
+    this.readHistory = readHistory;
   }
 }
 
-class SubscribeWebSite {
+export class SubscribeWebSite {
   folderIndex: number;
   folderName: string;
   siteIndex: number;
@@ -32,54 +46,54 @@ class SubscribeWebSite {
   // サイト情報はユーザー側で保持しておくからDB型-API型双変換でサイトクエリが走る事にはならない
   siteID: number;
 
-  constructor() {
-    this.folderIndex = 0;
-    this.folderName = '';
-    this.siteIndex = 0;
-    this.siteID = 0;
+  constructor(folderIndex: number, folderName: string, siteIndex: number, siteID: number) {
+    this.folderIndex = folderIndex;
+    this.folderName = folderName;
+    this.siteIndex = siteIndex;
+    this.siteID = siteID;
   }
 }
 
-class FavoriteSite {
+export class FavoriteSite {
   siteID: number;
   createdAt: string;
 
-  constructor() {
-    this.siteID = 0;
-    this.createdAt = '';
+  constructor(siteID: number, createdAt: string) {
+    this.siteID = siteID;
+    this.createdAt = createdAt;
   }
 }
 
-class FavoriteArticle {
+export class FavoriteArticle {
   articleID: number;
   createdAt: string;
 
-  constructor() {
-    this.articleID = 0;
-    this.createdAt = '';
+  constructor(articleID: number, createdAt: string) {
+    this.articleID = articleID;
+    this.createdAt = createdAt;
   }
 }
 
-class SearchHistory {
+export class SearchHistory {
   searchWord: string;
   searchAt: string;
 
-  constructor() {
-    this.searchWord = '';
-    this.searchAt = '';
+  constructor(searchWord: string, searchAt: string) {
+    this.searchWord = searchWord;
+    this.searchAt = searchAt;
   }
 }
 
-class ReadHistory {
+export class ReadHistory {
   link: string;
   accessAt: string;
   accessPlatform: string;
   accessIP: string;
 
-  constructor() {
-    this.link = '';
-    this.accessAt = '';
-    this.accessPlatform = '';
-    this.accessIP = '';
+  constructor(link: string, accessAt: string, accessPlatform: string, accessIP: string) {
+    this.link = link;
+    this.accessAt = accessAt;
+    this.accessPlatform = accessPlatform;
+    this.accessIP = accessIP;
   }
 }

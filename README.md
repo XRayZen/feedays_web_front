@@ -1,4 +1,3 @@
-
 # Feedays_Web_Frontend
 RSSリーダーサービスのWebフロントエンド（Next.js 13）
 # 現在の実装状況
@@ -10,4 +9,3 @@ RSSリーダーサービスのWebフロントエンド（Next.js 13）
 - TypeScript
 - ChakraUI
 - 状態管理にReduxを採用
-

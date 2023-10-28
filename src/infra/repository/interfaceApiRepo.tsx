@@ -1,5 +1,11 @@
-interface IUserApiRepo {
-  isMOck: boolean;
+import { ClientConfig, ApiLimitConfig } from "../data/appConfig";
+import { ExploreCategory } from "../data/explore";
+import { ApiSearchRequest, FetchArticlesRequest } from "../data/request";
+import { ConfigSyncResponse, SearchResult, FetchArticleResponse } from "../data/response";
+import { FavoriteArticle, FavoriteSite, ReadHistory, SearchHistory, UserConfig } from "../data/userConfig";
+import { WebSite } from "../data/webSite";
+
+export interface IUserApiRepo {
 
   genUserID: () => Promise<string>;
   RegisterUser(userID: string, userConfig: UserConfig): Promise<string>;
@@ -10,38 +16,38 @@ interface IUserApiRepo {
   ModifySearchHistory(
     userID: string,
     searchHistory: SearchHistory[],
-    searchHistoryType: string,
-  ): Promise<string>;
+    searchHistoryType: string
+  ): Promise<string[]>;
+
   ModifyFavoriteSite(
     userID: string,
     favoriteSite: FavoriteSite[],
-    favoriteSiteType: string,
+    favoriteSiteType: string
   ): Promise<string>;
   ModifyFavoriteArticle(
     userID: string,
     favoriteArticle: FavoriteArticle[],
-    favoriteArticleType: string,
+    favoriteArticleType: string
   ): Promise<string>;
 
-  GetAPIRequestLimit(userID: string): Promise<ApiConfig>;
-  ModifyAPIRequestLimit(userID: string, apiConfig: ApiConfig): Promise<string>;
+  GetAPIRequestLimit(userID: string): Promise<ApiLimitConfig>;
 
   DeleteUserData(userID: string): Promise<string>;
 }
 
-interface IRssApiRepo {
+export interface IRssApiRepo {
   Search(userID: string, searchRequest: ApiSearchRequest): Promise<SearchResult>;
   SubscribeSite(userID: string, site: WebSite, isSubscribe: boolean): Promise<string>;
   FetchArticle(
     userID: string,
-    fetchArticleRequest: FetchArticlesRequest,
+    fetchArticleRequest: FetchArticlesRequest
   ): Promise<FetchArticleResponse>;
 
   ExploreCategory(userID: string): Promise<ExploreCategory[]>;
   ModifyExploreCategory(
     userID: string,
     exploreCategory: ExploreCategory,
-    ModifyType: string,
+    ModifyType: string
   ): Promise<string>;
   ChangeSiteCategory(userID: string, siteUrl: string, categoryName: string): Promise<string>;
 
