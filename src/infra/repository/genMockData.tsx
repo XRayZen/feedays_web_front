@@ -1,17 +1,17 @@
 // モックテスト用のデータを生成して返す
 
-import { ExploreCategory } from "../data/explore";
-import { UserConfig } from "../data/userConfig";
-import { Article, RssFeedImage, WebSite } from "../data/webSite";
+import { ExploreCategory } from '../data/explore';
+import { UserConfig } from '../data/userConfig';
+import { Article, RssFeedImage, WebSite } from '../data/webSite';
 
 // サイトを生成する
 
 export function genMockWebSites(): WebSite[] {
   let webSites: WebSite[] = [];
   for (let i = 0; i < 5; i++) {
-    let url = "https://www.gstatic.com/webp/gallery/+"+i+".webp";
+    let url = 'https://www.gstatic.com/webp/gallery/+' + i + '.webp';
     if (i == 0) {
-      url = "https://www.gstatic.com/webp/gallery/1.webp";
+      url = 'https://www.gstatic.com/webp/gallery/1.webp';
     }
     let webSite = genMockWebSite(url);
     webSites.push(webSite);
@@ -19,37 +19,24 @@ export function genMockWebSites(): WebSite[] {
   return webSites;
 }
 
-export function genMockWebSite(imageUrl:string): WebSite {
-  return new WebSite(
-    'https://www.g',
-    imageUrl,
-    '',
-    '',
-    '',
-    '',
-    '',
-    [''],
-    ''
-  );
+export function genMockWebSite(imageUrl: string): WebSite {
+  return new WebSite('https://www.g', imageUrl, '', '', '', '', '', [''], '');
 }
 
 // 記事のモックデータを生成して返す
 export function genMockArticles(): Article[] {
   let articles: Article[] = [];
   for (let i = 0; i < 6; i++) {
-    let imageUrl= "https://colinbendell.github.io/webperf/animated-gif-decode/"+i+".webp"
+    let imageUrl = 'https://colinbendell.github.io/webperf/animated-gif-decode/' + i + '.webp';
     if (i == 0) {
-      imageUrl = "https://colinbendell.github.io/webperf/animated-gif-decode/1.webp";
+      imageUrl = 'https://colinbendell.github.io/webperf/animated-gif-decode/1.webp';
     }
     articles.push(
       new Article(
         'title' + i,
         'description' + i,
         'link' + i,
-        new RssFeedImage(
-          imageUrl,
-          'data' + i
-        ),
+        new RssFeedImage(imageUrl, 'data' + i),
         'site' + i,
         'publishedAt' + i,
         false,
@@ -81,11 +68,5 @@ export function genMockExploreCategories(): ExploreCategory[] {
 
 // ユーザー設定を生成する
 export function genMockUserConfig(userID: string): UserConfig {
-  return new UserConfig("Mock User Name",userID,"Free","JPN",[],[],[],[],[])
+  return new UserConfig('Mock User Name', userID, 'Free', 'JPN', [], [], [], [], []);
 }
-
-// 
-
-
-
-

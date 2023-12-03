@@ -1,3 +1,6 @@
+import { ClientConfig, ApiLimitConfig } from '../data/appConfig';
+import { ConfigSyncResponse } from '../data/response';
+import { UserConfig, ReadHistory, SearchHistory, FavoriteSite, FavoriteArticle } from '../data/userConfig';
 import { IUserApiRepo } from './interfaceApiRepo';
 
 // IUserApiRepoを継承して実装する

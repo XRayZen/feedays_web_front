@@ -8,8 +8,8 @@
   },
   // ファイル保存時、ESLint による自動フォーマット
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "eslint.validate": [
     "html",
@@ -20,5 +20,11 @@
   "scss.validate": false,
   "cSpell.words": [
     "webp"
-  ]
+  ],
+  "[go]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    }
+  }
 }
